@@ -2,13 +2,19 @@
 
 using namespace std;
 
-double my_pow(unsigned int step, double chis)
-{
+double my_pow(double chis, unsigned int step) {
 	double k = 1;
-	for (int i = 1; i <= step; i++)
-	{
-		k = k * chis;
+	while (step) {
+		if (step % 2 == 0) {
+			step /= 2;
+			chis *= chis;
+		}
+		else {
+			step--;
+			k *= chis;
+		}
 	}
+
 	return k;
 }
 int main()
