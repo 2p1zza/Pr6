@@ -2,23 +2,14 @@
 
 using namespace std;
 
-double my_pow(double chis, int step) {
+double my_pow(unsigned int step, double chis)
+{
 	double k = 1;
-	if (step < 0) {
-		step = -step;
-		for (int i = 0; i < step; i++) {
-			k = k * chis;
-		}
-
-		return 1 / k;
+	for (int i = 1; i <= step; i++)
+	{
+		k = k * chis;
 	}
-	else {
-		for (int i = 0; i < step; i++) {
-			k = k * chis;
-		}
-		cout << k << endl;
-		return k;
-	}
+	return k;
 }
 int main()
 {
